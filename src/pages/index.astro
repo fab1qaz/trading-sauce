@@ -1,0 +1,383 @@
+---
+import '../styles/global.css'
+
+const services = [
+  {
+    name: "Traders' Treehouse",
+    price: "$200/month",
+    description: "Group Chat + Weekly Video Calls",
+    features: ["Telegram community", "Weekly 1-hour Google Meet", "Psychology & risk coaching", "Direct access to Fabian"]
+  },
+  {
+    name: "1-on-1 Session",
+    price: "$200",
+    description: "One Hour Coaching Call",
+    features: ["Diagnose your sticking point", "Personalized feedback", "Actionable next steps"]
+  },
+  {
+    name: "Lifetime Mentee",
+    price: "$20,000",
+    description: "Complete Trading Education",
+    features: ["All technical setups", "Chart configurations", "Private mentee chat", "Unlimited access"]
+  }
+]
+
+const socials = [
+  { name: "YouTube", url: "https://www.youtube.com/@fabianshaw_/videos", icon: "youtube" },
+  { name: "Instagram", url: "https://www.instagram.com/fabianshaw_/", icon: "instagram" },
+  { name: "X", url: "https://x.com/fabianshaw_", icon: "twitter" }
+]
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Solve Your Trading Execution Errors By Overcoming Mental Biases. Day Trading Coaching with Fabian Shaw." />
+    <meta name="theme-color" content="#050508" />
+    <title>Trading Sauce | Day Trading Coaching</title>
+  </head>
+
+  <body class="cyber-grid min-h-screen">
+    <!-- Ambient Glow -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-1/4 -left-32 w-96 h-96 bg-cyan/5 rounded-full blur-[128px]"></div>
+      <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-magenta/5 rounded-full blur-[128px]"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-void/80 backdrop-blur-md border-b border-gunmetal/50">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="group flex items-center gap-3">
+          <div class="w-10 h-10 border border-sauce/50 flex items-center justify-center">
+            <span class="text-sauce font-display text-sm font-bold">TS</span>
+          </div>
+          <span class="font-display text-sm tracking-wider text-ghost hidden sm:block">
+            Trading<span class="text-sauce">Sauce</span>
+          </span>
+        </a>
+        <a
+          href="https://www.launchpass.com/the-trader-treehouse"
+          target="_blank"
+          rel="noopener"
+          class="btn-cyber text-xs"
+        >
+          Join Treehouse
+        </a>
+      </div>
+    </header>
+
+    <main class="relative">
+      <!-- Hero Section -->
+      <section class="min-h-screen flex items-center justify-center pt-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <div class="mb-8">
+            <span class="inline-block px-4 py-2 text-xs font-mono text-cyan border border-cyan/30 bg-cyan/5 tracking-widest uppercase">
+              Day Trading Coaching
+            </span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl md:text-7xl font-display font-bold mb-6 leading-tight">
+            <span class="text-ghost">Trading</span>
+            <span class="text-sauce glow-sauce">Sauce</span>
+          </h1>
+
+          <p class="text-xl sm:text-2xl text-mist mb-4 font-display tracking-wide">
+            with <span class="text-cyan">Fabian Shaw</span>
+          </p>
+
+          <p class="text-lg text-shadow max-w-2xl mx-auto mb-12 leading-relaxed">
+            Solve your trading execution errors by overcoming mental biases.
+            Implement proper risk management. Reach your full potential.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="https://www.launchpass.com/the-trader-treehouse"
+              target="_blank"
+              rel="noopener"
+              class="btn-cyber"
+            >
+              Enter the Treehouse
+            </a>
+            <a href="#about" class="btn-cyber !border-gunmetal !text-mist hover:!text-ghost hover:!border-ghost">
+              Learn More
+            </a>
+          </div>
+
+          <!-- Scroll indicator -->
+          <div class="absolute bottom-12 left-1/2 -translate-x-1/2 pulse">
+            <div class="w-6 h-10 border border-gunmetal rounded-full flex items-start justify-center p-2">
+              <div class="w-1 h-2 bg-cyan rounded-full animate-bounce"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="py-24 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="card-cyber p-8 sm:p-12 rounded-lg">
+            <div class="grid md:grid-cols-[220px,1fr] gap-8 items-start">
+              <!-- Image -->
+              <div class="relative group">
+                <div class="aspect-square bg-dark border border-gunmetal rounded overflow-hidden">
+                  <img
+                    src="https://i0.wp.com/tradingsauce.com/wp-content/uploads/2025/06/WIN_20230722_09_39_07_Pro.png?w=1920&ssl=1"
+                    alt="Fabian Shaw"
+                    class="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-500"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="absolute inset-0 border border-cyan/20 rounded translate-x-2 translate-y-2 -z-10 group-hover:translate-x-3 group-hover:translate-y-3 transition-transform"></div>
+              </div>
+
+              <!-- Content -->
+              <div class="space-y-6">
+                <h2 class="text-2xl sm:text-3xl font-display text-ghost">
+                  Hey, I'm <span class="text-cyan">Fabian</span>
+                </h2>
+                <p class="text-mist leading-relaxed">
+                  A full-time trader and part-time trading coach.
+                </p>
+                <p class="text-mist leading-relaxed">
+                  If you've been in this game for a while, you know there are a thousand sticking points
+                  when it comes to consistency. And the solutions to any of them are not immediately obvious—
+                  <span class="text-ghost">otherwise, you would already be doing them.</span>
+                </p>
+                <p class="text-cyan font-medium">That's where I come in.</p>
+                <p class="text-mist leading-relaxed">
+                  I am a doctor of psychology <span class="text-shadow">(not literally)</span>.
+                  I will diagnose and help you fix your sticking points one by one.
+                </p>
+                <div class="pt-4 border-t border-gunmetal">
+                  <p class="text-sm text-shadow">
+                    Whether you enter trades too early, exit too soon or too late,
+                    don't size effectively, or struggle with prop firm accounts—
+                    <span class="text-sauce">I can help.</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Treehouse Section -->
+      <section id="treehouse" class="py-24 px-6 bg-abyss/50">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-16">
+            <span class="inline-block px-4 py-2 text-xs font-mono text-magenta border border-magenta/30 bg-magenta/5 tracking-widest uppercase mb-6">
+              Primary Offering
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-display mb-4">
+              The <span class="text-sauce glow-sauce">Traders' Treehouse</span>
+            </h2>
+            <p class="text-2xl text-cyan font-display">$200/month</p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <!-- Features -->
+            <div class="space-y-6 order-2 md:order-1">
+              <p class="text-mist leading-relaxed">
+                A centralised area in the form of a <span class="text-ghost">Telegram Group Chat</span> where
+                traders come together and discuss the issues they are facing in executing their systems.
+              </p>
+
+              <ul class="space-y-4">
+                {[
+                  "Bounce ideas off others and ask me directly",
+                  "Text and voice message capabilities",
+                  "Weekly 1-hour Google Meet included 🤫",
+                  "Covers psychology, risk management, execution"
+                ].map((item) => (
+                  <li class="flex items-start gap-3">
+                    <span class="text-cyan mt-1">▹</span>
+                    <span class="text-mist">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="p-4 bg-dark/50 border-l-2 border-sauce rounded-r">
+                <p class="text-sm text-mist">
+                  <span class="text-ghost font-medium">Ideal for:</span> Traders who already have their own setups
+                  and need help with non-technical sticking points. Come armed with your strategies—
+                  I'll help you bridge the gap from unprofitable to profitable.
+                </p>
+              </div>
+
+              <a
+                href="https://www.launchpass.com/the-trader-treehouse"
+                target="_blank"
+                rel="noopener"
+                class="btn-cyber inline-block mt-4"
+              >
+                Join the Treehouse
+              </a>
+            </div>
+
+            <!-- Image -->
+            <div class="order-1 md:order-2">
+              <div class="relative">
+                <div class="aspect-square bg-dark border border-gunmetal rounded-lg overflow-hidden box-glow-cyan">
+                  <img
+                    src="https://i0.wp.com/tradingsauce.com/wp-content/uploads/2026/01/de.png?w=833&ssl=1"
+                    alt="Traders' Treehouse"
+                    class="w-full h-full object-contain p-4"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- One on One Section -->
+      <section id="coaching" class="py-24 px-6">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-16">
+            <span class="inline-block px-4 py-2 text-xs font-mono text-cyan border border-cyan/30 bg-cyan/5 tracking-widest uppercase mb-6">
+              Option Two
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-display mb-4">
+              <span class="text-cyan glow-cyan">1-on-1</span> Coaching
+            </h2>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Single Session -->
+            <div class="card-cyber p-8 rounded-lg">
+              <div class="flex items-center justify-between mb-6">
+                <h3 class="text-xl font-display text-ghost">Single Session</h3>
+                <span class="text-2xl font-display text-cyan">$200</span>
+              </div>
+              <p class="text-mist mb-6">
+                A one-hour call focused on diagnosing and addressing your specific sticking point.
+              </p>
+              <div class="text-sm text-shadow">
+                Contact via Telegram, Instagram, or email.
+              </div>
+            </div>
+
+            <!-- Lifetime -->
+            <div class="card-cyber p-8 rounded-lg border-magenta/30">
+              <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-magenta to-transparent"></div>
+              <div class="flex items-center justify-between mb-6">
+                <h3 class="text-xl font-display text-ghost">Lifetime Mentee</h3>
+                <span class="text-2xl font-display text-magenta">$20k</span>
+              </div>
+              <p class="text-mist mb-6">
+                Brand new to trading? Get a multi-year headstart with everything from the ground up—
+                chart setups, my complete collection of trading set-ups, and almost unlimited access
+                in our private lifetime mentee chat.
+              </p>
+              <div class="text-sm text-shadow">
+                Limited spots. Serious inquiries only.
+              </div>
+            </div>
+          </div>
+
+          <!-- Important Note -->
+          <div class="mt-12 p-6 border border-gunmetal rounded-lg bg-dark/30">
+            <h4 class="text-lg font-display text-sauce mb-4">Remember:</h4>
+            <p class="text-mist leading-relaxed mb-4">
+              <span class="text-ghost font-semibold">Three things are needed for profitability:</span>
+              setups, risk management, and psychology.
+            </p>
+            <p class="text-mist leading-relaxed">
+              You don't <span class="text-cyan">NEED</span> my setups to become profitable!
+              If you've already spent years developing your own trading setups and the bottleneck is non-technical,
+              the Treehouse is probably your best bet. Maybe you're closer than you think.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-24 px-6 bg-abyss/50">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="text-3xl sm:text-4xl font-display mb-6">
+            <span class="text-ghost">Get in</span> <span class="text-cyan">Touch</span>
+          </h2>
+          <p class="text-mist mb-8">
+            For one-on-one coaching, message me inside the Treehouse Telegram Chat,
+            DM me on Instagram, or email me directly.
+          </p>
+
+          <a
+            href="mailto:fabian@tradingsauce.com"
+            class="inline-block font-mono text-lg text-cyan hover:text-ghost transition-colors mb-12"
+          >
+            fabian@tradingsauce.com
+          </a>
+
+          <!-- Social Links -->
+          <div class="flex justify-center gap-6">
+            {socials.map((social) => (
+              <a
+                href={social.url}
+                target="_blank"
+                rel="noopener"
+                class="w-12 h-12 border border-gunmetal hover:border-cyan flex items-center justify-center transition-colors group"
+                title={social.name}
+              >
+                {social.icon === "youtube" && (
+                  <svg class="w-5 h-5 text-mist group-hover:text-cyan transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                )}
+                {social.icon === "instagram" && (
+                  <svg class="w-5 h-5 text-mist group-hover:text-cyan transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                )}
+                {social.icon === "twitter" && (
+                  <svg class="w-5 h-5 text-mist group-hover:text-cyan transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                )}
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gunmetal py-12 px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="grid sm:grid-cols-3 gap-8 mb-8">
+          <div>
+            <h4 class="font-display text-sauce text-sm mb-3">Trading Sauce</h4>
+            <p class="text-sm text-shadow">
+              Where aspiring traders learn how to trade and grow their capital.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-display text-sauce text-sm mb-3">Services</h4>
+            <ul class="space-y-2 text-sm text-shadow">
+              <li>Group Coaching – $200/mo</li>
+              <li>1-on-1 Session – $200</li>
+              <li>Lifetime Mentee – $20k</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-display text-sauce text-sm mb-3">Contact</h4>
+            <a href="mailto:fabian@tradingsauce.com" class="text-sm text-mist hover:text-cyan transition-colors">
+              fabian@tradingsauce.com
+            </a>
+          </div>
+        </div>
+
+        <div class="divider mb-8"></div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-shadow">
+          <p>© Trading Sauce {new Date().getFullYear()}</p>
+          <p class="font-mono text-xs">[ EXECUTE WITH PRECISION ]</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

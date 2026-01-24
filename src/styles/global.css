@@ -1,0 +1,288 @@
+@import "tailwindcss";
+
+/* ══════════════════════════════════════════════════════════════
+   TRADING SAUCE - CYBERPUNK DESIGN SYSTEM
+   Batman + Ghost in the Shell Aesthetic
+   ══════════════════════════════════════════════════════════════ */
+
+@theme {
+  /* ─── Core Palette ─── */
+  --color-void: #050508;
+  --color-abyss: #0a0a0f;
+  --color-dark: #12121a;
+  --color-steel: #1a1a24;
+  --color-gunmetal: #2a2a38;
+
+  /* ─── Neon Accents ─── */
+  --color-cyan: #00f0ff;
+  --color-cyan-dim: #00f0ff80;
+  --color-magenta: #ff00ff;
+  --color-magenta-dim: #ff00ff60;
+  --color-matrix: #00ff41;
+  --color-gold: #ffd700;
+  --color-sauce: #94c595;
+
+  /* ─── Text ─── */
+  --color-ghost: #e0e0e8;
+  --color-mist: #a0a0b0;
+  --color-shadow: #606070;
+
+  /* ─── Fonts ─── */
+  --font-display: 'Orbitron', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* ─── Font Imports ─── */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/orbitron/v31/yMJMMIlzdpvBhQQL_SC3X9yhF25-T1nyGy6xpmIyXjU1pg.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hjp-Ek-_EeA.woff2') format('woff2');
+}
+
+/* ─── Base Styles ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-void);
+  color: var(--color-ghost);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: var(--color-cyan);
+  color: var(--color-void);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-abyss);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gunmetal);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-cyan-dim);
+}
+
+/* ─── Typography ─── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ─── Neon Glow Effects ─── */
+.glow-cyan {
+  text-shadow:
+    0 0 5px var(--color-cyan),
+    0 0 10px var(--color-cyan),
+    0 0 20px var(--color-cyan-dim);
+}
+
+.glow-magenta {
+  text-shadow:
+    0 0 5px var(--color-magenta),
+    0 0 10px var(--color-magenta),
+    0 0 20px var(--color-magenta-dim);
+}
+
+.glow-sauce {
+  text-shadow:
+    0 0 5px var(--color-sauce),
+    0 0 10px var(--color-sauce),
+    0 0 20px rgba(148, 197, 149, 0.4);
+}
+
+/* ─── Box Glow ─── */
+.box-glow-cyan {
+  box-shadow:
+    0 0 5px var(--color-cyan-dim),
+    0 0 20px rgba(0, 240, 255, 0.1),
+    inset 0 0 30px rgba(0, 240, 255, 0.05);
+}
+
+.box-glow-magenta {
+  box-shadow:
+    0 0 5px var(--color-magenta-dim),
+    0 0 20px rgba(255, 0, 255, 0.1),
+    inset 0 0 30px rgba(255, 0, 255, 0.05);
+}
+
+/* ─── Scanline Effect ─── */
+.scanlines {
+  position: relative;
+}
+
+.scanlines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
+  );
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+/* ─── Grid Background ─── */
+.cyber-grid {
+  background-image:
+    linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* ─── Glitch Animation ─── */
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}
+
+.glitch:hover {
+  animation: glitch 0.3s ease-in-out;
+}
+
+/* ─── Pulse Animation ─── */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.pulse {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ─── Border Gradient ─── */
+.border-gradient {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--color-dark), var(--color-dark)) padding-box,
+    linear-gradient(135deg, var(--color-cyan), var(--color-magenta)) border-box;
+}
+
+/* ─── Button Styles ─── */
+.btn-cyber {
+  position: relative;
+  padding: 1rem 2.5rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-cyan);
+  background: transparent;
+  border: 1px solid var(--color-cyan);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 12px) 0,
+    100% 12px,
+    100% 100%,
+    12px 100%,
+    0 calc(100% - 12px)
+  );
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-cyber::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--color-cyan);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.btn-cyber:hover {
+  color: var(--color-void);
+}
+
+.btn-cyber:hover::before {
+  opacity: 1;
+}
+
+/* ─── Card Styles ─── */
+.card-cyber {
+  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-abyss) 100%);
+  border: 1px solid var(--color-gunmetal);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-cyber::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-cyan), transparent);
+}
+
+/* ─── Animated Underline ─── */
+.link-cyber {
+  position: relative;
+  color: var(--color-cyan);
+  text-decoration: none;
+}
+
+.link-cyber::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-cyan);
+  transition: width 0.3s ease;
+}
+
+.link-cyber:hover::after {
+  width: 100%;
+}
+
+/* ─── Divider ─── */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gunmetal), transparent);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .btn-cyber {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.75rem;
+  }
+}
