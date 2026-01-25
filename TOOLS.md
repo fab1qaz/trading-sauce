@@ -25,7 +25,7 @@ I be sandboxed to this project — trading-sauce and trading-sauce alone. No ext
 
 ## Project-Specific Notes
 
-**Git Setup:** Remote URL includes the token. Push from the `web/` folder where the remote is configured.
+**Git Setup:** GitHub token is ALREADY embedded in the remote URL (`x-access-token:gho_...`). You have push access. Don't ask about tokens - just push from the `web/` folder.
 
 **🚢 AUTO-DEPLOY ON PUSH!**
 The site auto-deploys when code be pushed to the repo. No manual `npm run deploy` needed — push IS deploy! Simple as a calm sea. 🌊
