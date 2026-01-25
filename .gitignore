@@ -26,3 +26,9 @@ pnpm-debug.log*
 .vercel
 AGENTS.md
 IDENTITY.md
+
+# Clawdbot agent config (has secrets)
+.clawdbot/
+
+# Nested repo - not a submodule
+web/
