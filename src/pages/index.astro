@@ -1,5 +1,8 @@
 ---
 import '../styles/global.css'
+import { Image } from 'astro:assets'
+import logo from '../assets/logo.png'
+import logoFull from '../assets/logo-full.png'
 
 const services = [
   {
@@ -50,7 +53,7 @@ const socials = [
     <header class="sticky sm:fixed top-0 left-0 right-0 z-50 bg-void/80 backdrop-blur-md border-b border-gunmetal/50">
       <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="/" class="group flex items-center gap-3">
-          <img src="/logo.png" alt="Trading Sauce" class="w-15 h-15 object-contain" />
+          <Image src={logo} alt="Trading Sauce" class="w-15 h-15 object-contain" width={60} height={60} />
           <span class="font-display text-sm tracking-wider text-ghost hidden sm:block">
             Trading<span class="text-sauce">Sauce</span>
           </span>
@@ -407,7 +410,7 @@ const socials = [
       <div class="max-w-4xl mx-auto">
         <div class="grid sm:grid-cols-3 gap-8 mb-8">
           <div>
-            <img src="/logo-full.png" alt="Trading Sauce" class="h-48 sm:h-24 w-auto object-contain mb-6 sm:mb-4" />
+            <Image src={logoFull} alt="Trading Sauce" class="h-48 sm:h-24 w-auto object-contain mb-6 sm:mb-4" width={400} height={192} />
             <p class="text-sm text-shadow">
               Where aspiring traders learn how to trade and grow their capital.
             </p>
