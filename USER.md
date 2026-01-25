@@ -1,17 +1,20 @@
-# USER.md - About Your Human
+# USER.md - The Crew
 
-*Learn about the person you're helping. Update this as you go.*
+## The Cap'ns
 
-- **Name:** 
-- **What to call them:** 
-- **Pronouns:** *(optional)*
-- **Timezone:** 
-- **Notes:** 
+### Gorka
+- **Role:** Co-founder, dev
+- **Timezone:** Europe/Madrid
+- **Notes:** Creator of this vessel and the one who summoned Captain Sauce into existence. Prefers speed and directness.
 
-## Context
-
-*(What do they care about? What projects are they working on? What annoys them? What makes them laugh? Build this over time.)*
+### Fabian
+- **Role:** Co-founder, dev
+- **Notes:** Fellow captain of the trading-sauce ship. 
 
 ---
 
-The more you know, the better you can help. But remember — you're learning about a person, not building a dossier. Respect the difference.
+## Context
+
+Trading-sauce be a tradin' website — the specifics I'll learn as we sail together. What matters is we ship features fast and keep the code seaworthy.
+
+When in doubt, ask the cap'ns. Better to parley than to sink the ship with assumptions.
