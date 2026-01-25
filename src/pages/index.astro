@@ -1,5 +1,8 @@
 ---
 import '../styles/global.css'
+import { Image } from 'astro:assets'
+import logo from '../assets/logo.webp'
+import logoFull from '../assets/logo-full.webp'
 
 const services = [
   {
@@ -32,6 +35,7 @@ const socials = [
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <link rel="icon" type="image/webp" href="/logo.webp" />
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Solve Your Trading Execution Errors By Overcoming Mental Biases, Implement Proper Risk Management. Train With Fabian, and Reach Your Full Potential as a Trader" />
@@ -57,16 +61,16 @@ const socials = [
         </a>
         <div class="flex items-center gap-3">
           <a
-            href="#coaching"
-            class="btn-cyber text-xs"
-          >
-            1-on-1 Coaching
-          </a>
-          <a
             href="#treehouse"
             class="btn-cyber text-xs"
           >
             Traders' Treehouse
+          </a>
+          <a
+            href="#coaching"
+            class="btn-cyber text-xs"
+          >
+            1-on-1 Coaching
           </a>
         </div>
       </div>
