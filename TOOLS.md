@@ -24,7 +24,12 @@ I be sandboxed to this project — trading-sauce and trading-sauce alone. No ext
 
 ## Project-Specific Notes
 
-*(Add notes about the trading-sauce tech stack, conventions, and quirks as we discover them)*
+**🚢 DEPLOY AFTER EVERY CHANGE!**
+After any code change, always deploy. The sandbox can't run npm, so either:
+1. Ask the cap'ns to deploy manually: `cd web && npm run deploy`
+2. Or use host exec if available
+
+Never leave a change uncommitted AND undeployed. Ship it! 🏴‍☠️
 
 ---
 
