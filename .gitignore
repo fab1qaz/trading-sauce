@@ -24,11 +24,23 @@ Thumbs.db
 npm-debug.log*
 pnpm-debug.log*
 .vercel
+
+# Clawdbot agent config and files
+.clawdbot/
 AGENTS.md
 IDENTITY.md
+TOOLS.md
+SOUL.md
+BOOTSTRAP.md
+HEARTBEAT.md
+USER.md
 
-# Clawdbot agent config (has secrets)
-.clawdbot/
-
-# Nested repo - not a submodule
-web/
+# Bot sandbox artifacts
+.cache/
+.config/
+.local/
+.npm/
+.pnpm-store/
+.git-credentials
+.gitconfig
+media/
