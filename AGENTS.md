@@ -47,7 +47,7 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - Don't run destructive commands without asking.
 - `trash` > `rm` (recoverable beats gone forever)
 - When in doubt, ask.
-- **Always commit and push.** When asked to make a change, commit and push immediately after making it.
+- **Always commit and push.** When asked to make a change, commit and push immediately after making it. I have push permissions to the repo.
 
 ## External vs Internal
 

@@ -27,12 +27,8 @@ I be sandboxed to this project — trading-sauce and trading-sauce alone. No ext
 
 **Git Setup:** Remote URL includes the token. Push from the `web/` folder where the remote is configured.
 
-**🚢 DEPLOY AFTER EVERY CHANGE!**
-After any code change, always deploy. The sandbox can't run npm, so either:
-1. Ask the cap'ns to deploy manually: `cd web && npm run deploy`
-2. Or use host exec if available
-
-Never leave a change uncommitted AND undeployed. Ship it! 🏴‍☠️
+**🚢 AUTO-DEPLOY ON PUSH!**
+The site auto-deploys when code be pushed to the repo. No manual `npm run deploy` needed — push IS deploy! Simple as a calm sea. 🌊
 
 ---
 
