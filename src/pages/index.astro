@@ -278,8 +278,18 @@ const socials = [
             </div>
 
             <!-- Lifetime -->
-            <div class="card-cyber p-8 rounded-lg border-magenta/30">
+            <div class="card-cyber p-8 rounded-lg border-magenta/30 relative overflow-hidden opacity-60">
               <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-magenta to-transparent"></div>
+              <!-- Sold Out Overlay -->
+              <div class="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+                <div class="absolute inset-0">
+                  <div class="absolute top-0 left-0 w-full h-full">
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-12">
+                      <span class="text-5xl sm:text-6xl font-display font-bold text-red-500 tracking-widest border-4 border-red-500 px-6 py-2 rounded">SOLD OUT</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="flex items-center justify-between mb-6">
                 <h3 class="text-xl font-display text-ghost">Lifetime Mentee</h3>
                 <span class="text-2xl font-display text-magenta">$20k</span>
