@@ -1,0 +1,99 @@
+#!/bin/bash
+# Transcribe audio/video using AssemblyAI
+# Usage: ./bin/transcribe <file>
+
+set -e
+
+API_KEY="2b5698ed9d4d426cb65b1f5bcf33c257"
+FILE="$1"
+
+if [ -z "$FILE" ]; then
+  echo "Usage: $0 <audio_or_video_file>"
+  exit 1
+fi
+
+if [ ! -f "$FILE" ]; then
+  echo "Error: File not found: $FILE"
+  exit 1
+fi
+
+echo "📁 $FILE"
+
+# Extract audio if video
+EXT="${FILE##*.}"
+AUDIO_FILE="$FILE"
+
+if [[ "$EXT" =~ ^(mp4|mov|avi|mkv|webm)$ ]]; then
+  echo "🎵 Extracting audio..."
+  AUDIO_FILE="/tmp/transcribe_audio_$$.ogg"
+  ffmpeg -i "$FILE" -vn -acodec libopus -b:a 64k "$AUDIO_FILE" -y 2>/dev/null
+fi
+
+# Upload
+echo "⬆️  Uploading..."
+UPLOAD_RESPONSE=$(curl -s --request POST \
+  --url 'https://api.assemblyai.com/v2/upload' \
+  --header "authorization: $API_KEY" \
+  --data-binary @"$AUDIO_FILE")
+
+UPLOAD_URL=$(echo "$UPLOAD_RESPONSE" | grep -o '"upload_url":"[^"]*"' | cut -d'"' -f4)
+
+if [ -z "$UPLOAD_URL" ]; then
+  echo "Error: Upload failed"
+  echo "$UPLOAD_RESPONSE"
+  exit 1
+fi
+
+# Create transcript with speaker diarization
+echo "🎯 Transcribing..."
+TRANSCRIPT_RESPONSE=$(curl -s --request POST \
+  --url 'https://api.assemblyai.com/v2/transcript' \
+  --header "authorization: $API_KEY" \
+  --header 'content-type: application/json' \
+  --data "{\"audio_url\":\"$UPLOAD_URL\", \"speaker_labels\": true}")
+
+TRANSCRIPT_ID=$(echo "$TRANSCRIPT_RESPONSE" | grep -o '"id":"[^"]*"' | head -1 | cut -d'"' -f4)
+
+if [ -z "$TRANSCRIPT_ID" ]; then
+  echo "Error: Failed to create transcript"
+  echo "$TRANSCRIPT_RESPONSE"
+  exit 1
+fi
+
+# Poll until complete
+while true; do
+  RESULT=$(curl -s --url "https://api.assemblyai.com/v2/transcript/$TRANSCRIPT_ID" \
+    --header "authorization: $API_KEY")
+  
+  STATUS=$(echo "$RESULT" | grep -o '"status":"[^"]*"' | cut -d'"' -f4)
+  
+  if [ "$STATUS" = "completed" ]; then
+    break
+  elif [ "$STATUS" = "error" ]; then
+    echo "Error: Transcription failed"
+    echo "$RESULT"
+    exit 1
+  fi
+  
+  sleep 2
+done
+
+# Output with speaker labels
+OUTPUT_FILE="${FILE%.*}.txt"
+echo "$RESULT" | python3 -c "
+import sys, json
+data = json.load(sys.stdin)
+if 'utterances' in data and data['utterances']:
+    for u in data['utterances']:
+        print(f\"[{u['speaker']}]: {u['text']}\")
+elif 'text' in data:
+    print(data['text'])
+" > "$OUTPUT_FILE"
+
+echo "✅ $OUTPUT_FILE"
+cat "$OUTPUT_FILE"
+
+# Cleanup temp file
+if [ "$AUDIO_FILE" != "$FILE" ]; then
+  rm -f "$AUDIO_FILE"
+fi
