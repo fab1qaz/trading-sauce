@@ -4,6 +4,7 @@ import '../styles/global.css'
 import { Image } from 'astro:assets'
 import logo from '../assets/logo.webp'
 import logoFull from '../assets/logo-full.webp'
+import SpeedInsights from '@vercel/speed-insights/astro'
 
 const services = [
   {
@@ -451,5 +452,6 @@ const socials = [
     </footer>
     <!-- LaunchPass Widget -->
     <script async src="https://www.launchpass.com/the-trader-treehouse/traders-treehouse/embed.js"></script>
+    <SpeedInsights />
   </body>
 </html>
