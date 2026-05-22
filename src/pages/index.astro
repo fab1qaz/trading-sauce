@@ -5,27 +5,6 @@ import { Image } from 'astro:assets'
 import logo from '../assets/logo.webp'
 import logoFull from '../assets/logo-full.webp'
 
-const services = [
-  {
-    name: "Traders' Treehouse",
-    price: "$200/month",
-    description: "Group Chat + Weekly Video Calls",
-    features: ["Telegram community", "Weekly 1-hour Google Meet", "Psychology & risk coaching", "Direct access to Fabian"]
-  },
-  {
-    name: "1-on-1 Session",
-    price: "$200",
-    description: "One Hour Coaching Call",
-    features: ["Diagnose your sticking point", "Personalized feedback", "Actionable next steps"]
-  },
-  {
-    name: "Lifetime Mentee",
-    price: "$11,000",
-    description: "Complete Trading Education",
-    features: ["All technical setups", "Chart configurations", "Private mentee chat", "Unlimited access"]
-  }
-]
-
 const socials = [
   { name: "YouTube", url: "https://www.youtube.com/@fabianshaw_/videos", icon: "youtube" },
   { name: "Instagram", url: "https://www.instagram.com/fabianshaw_/", icon: "instagram" },
@@ -62,16 +41,20 @@ const socials = [
         </a>
         <div class="flex items-center gap-3">
           <a
-            href="#treehouse"
+            href="http://futures101.tradingsauce.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             class="btn-sauce text-xs"
           >
-            Traders' Treehouse
+            Futures 101
           </a>
           <a
-            href="#coaching"
+            href="https://advanced.tradingsauce.com/"
+            target="_blank"
+            rel="noopener noreferrer"
             class="btn-cyber text-xs"
           >
-            1-on-1 Coaching
+            Advanced
           </a>
         </div>
       </div>
@@ -179,128 +162,52 @@ const socials = [
         </div>
       </section>
 
-      <!-- Treehouse Section -->
-      <section id="treehouse" class="py-24 px-6 bg-abyss/50">
-        <div class="max-w-4xl mx-auto">
+      <!-- Courses Section -->
+      <section id="courses" class="py-24 px-6 bg-abyss/50">
+        <div class="max-w-5xl mx-auto">
           <div class="text-center mb-16">
             <span class="inline-block px-4 py-2 text-xs font-mono text-sauce border border-sauce/30 bg-sauce/5 tracking-widest uppercase mb-6">
-              Primary Offering
+              Start Here
             </span>
             <h2 class="text-3xl sm:text-4xl font-display mb-4">
-              The <span class="text-sauce glow-sauce">Traders' Treehouse</span>
+              Pick your <span class="text-sauce glow-sauce">course</span>
             </h2>
-            <p class="text-2xl text-sauce font-display">$200/month</p>
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-8 items-stretch">
-            <!-- Features -->
-            <div class="space-y-6 order-2 md:order-1">
-              <p class="text-mist leading-relaxed">
-                The Traders' Treehouse is a <span class="text-ghost">Telegram Group Chat</span> where
-                traders come together and overcome their trading issues with my guidance.
-              </p>
-
-              <ul class="space-y-4">
-                {[
-                  "Direct Advice to Complete Your Trading Plan: Backtesting, Risk Management, Psychology for Your Specific Situation",
-                  "Text and Voice Message Chat",
-                  "Motivation in a Pod of Progressing Traders",
-                  "1-Hour Google Meets to Push Growth Weekly"
-                ].map((item) => (
-                  <li class="flex items-start gap-3">
-                    <span class="text-cyan mt-1">▹</span>
-                    <span class="text-mist">{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div class="p-4 bg-dark/50 border-l-2 border-sauce rounded-r">
-                <p class="text-sm text-mist">
-                  <span class="text-ghost font-medium">Ideal for:</span> Newer Traders with common sticking points that can be addressed in a group context.
-                </p>
-              </div>
-
-              <div class="flex justify-center mt-4">
-                <button class="lp5189605487149056 lpbtn btn-sauce cursor-pointer" monthly="true">
-                  Join now for instant access
-                </button>
-              </div>
-            </div>
-
-            <!-- Image -->
-            <div class="order-1 md:order-2 flex flex-col items-center">
-              <a
-                href="https://www.launchpass.com/the-trader-treehouse"
-                target="_blank"
-                rel="noopener"
-                class="block relative group h-full"
-              >
-                <div class="h-full bg-dark border border-gunmetal rounded-lg overflow-hidden box-glow-sauce group-hover:border-sauce transition-colors flex items-center relative">
-                  <img
-                    src="/treehouse.png"
-                    alt="Traders' Treehouse"
-                    class="w-full h-full object-contain p-4"
-                    loading="lazy"
-                  />
-                </div>
-              </a>
-              <p class="text-xs text-mist mt-3 text-center">Click for more info</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- One on One Section -->
-      <section id="coaching" class="py-24 px-6">
-        <div class="max-w-4xl mx-auto">
-          <div class="text-center mb-16">
-            <span class="inline-block px-4 py-2 text-xs font-mono text-cyan border border-cyan/30 bg-cyan/5 tracking-widest uppercase mb-6">
-              Option Two
-            </span>
-            <h2 class="text-3xl sm:text-4xl font-display mb-4">
-              <span class="text-cyan glow-cyan">1-on-1 Coaching</span>
-            </h2>
+            <p class="text-mist max-w-2xl mx-auto">
+              Two focused trainings. Choose your level and start now.
+            </p>
           </div>
 
           <div class="grid md:grid-cols-2 gap-8">
-            <!-- Single Session -->
-            <div class="card-cyber p-8 rounded-lg">
-              <div class="flex items-center justify-between mb-6">
-                <h3 class="text-xl font-display text-ghost">1 Hour Session</h3>
-                <span class="text-2xl font-display text-cyan">$200</span>
-              </div>
-              <p class="text-mist mb-6">
-                A one-hour call focused on diagnosing and addressing your specific sticking point.
+            <article class="card-cyber p-8 rounded-lg">
+              <h3 class="text-2xl font-display text-ghost mb-4">Futures 101</h3>
+              <p class="text-mist mb-8 leading-relaxed">
+                Build your foundation: market structure, risk management, and execution basics.
               </p>
-              <div class="p-4 bg-dark/50 border-l-2 border-cyan rounded-r mb-6">
-                <p class="text-sm text-mist">
-                  <span class="text-ghost font-medium">Ideal for:</span> Traders with more time in the game who have a more advanced or private question.
-                </p>
-              </div>
-              <div class="text-sm text-shadow">
-                Contact via Telegram/Instagram/Discord/Email to book.
-              </div>
-            </div>
+              <a
+                href="http://futures101.tradingsauce.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-sauce inline-flex"
+              >
+                Start Futures 101
+              </a>
+            </article>
 
-            <!-- Lifetime -->
-            <div class="card-cyber p-8 rounded-lg border-magenta/30 relative overflow-hidden">
-              <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-magenta to-transparent"></div>
-              <div class="flex items-center justify-between mb-6">
-                <h3 class="text-xl font-display text-ghost">Lifetime Mentee</h3>
-                <span class="text-2xl font-display text-magenta">$11k</span>
-              </div>
-              <p class="text-mist mb-6">
-                Brand new to trading? Get a multi-year headstart with everything from the ground up—
-                chart setups, my complete collection of trading set-ups, and almost unlimited access to me
-                in our private lifetime mentee chat, where we review the best trades daily.
+            <article class="card-cyber p-8 rounded-lg border-cyan/30">
+              <h3 class="text-2xl font-display text-ghost mb-4">Advanced</h3>
+              <p class="text-mist mb-8 leading-relaxed">
+                Sharpen your edge, systemize execution, and scale with more precision.
               </p>
-              <div class="text-sm text-shadow">
-                Limited spots. Serious inquiries only.
-              </div>
-            </div>
+              <a
+                href="https://advanced.tradingsauce.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-cyber inline-flex"
+              >
+                Go Advanced
+              </a>
+            </article>
           </div>
-
-<!-- Important Note removed -->
         </div>
       </section>
 
@@ -457,11 +364,10 @@ const socials = [
             </p>
           </div>
           <div>
-            <h4 class="font-display text-cyan text-sm mb-3">Services</h4>
+            <h4 class="font-display text-cyan text-sm mb-3">Courses</h4>
             <ul class="space-y-2 text-sm text-shadow">
-              <li>Group Coaching – $200/mo</li>
-              <li>1-on-1 Session – $200</li>
-<!-- removed -->
+              <li><a href="http://futures101.tradingsauce.com/" target="_blank" rel="noopener noreferrer" class="hover:text-cyan transition-colors">Futures 101</a></li>
+              <li><a href="https://advanced.tradingsauce.com/" target="_blank" rel="noopener noreferrer" class="hover:text-cyan transition-colors">Advanced</a></li>
             </ul>
           </div>
           <div>
@@ -480,7 +386,5 @@ const socials = [
         </div>
       </div>
     </footer>
-    <!-- LaunchPass Widget -->
-    <script async src="https://www.launchpass.com/the-trader-treehouse/traders-treehouse/embed.js"></script>
   </body>
 </html>
